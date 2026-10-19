@@ -132,7 +132,7 @@ function checkout(event){event.preventDefault();const form=$('orderForm');if(!fo
 const orderRecord={orderId,date:new Date().toLocaleString('bn-BD'),customerName:val('customerName'),customerPhone:phone,address:[val('customerVillage'),val('customerThana'),val('customerDistrict'),val('customerLandmark')].filter(Boolean).join(', '),paymentMethod:val('paymentMethod'),paymentNumber:PAYMENT_NUMBER,paymentSender:val('paymentSender'),paymentTrx:val('paymentTrx'),subtotal:sum,delivery:DELIVERY_CHARGE,total:sum+DELIVERY_CHARGE,items:lines.map(x=>({id:x.p.id,name:x.p.name,price:x.p.price,qty:x.qty})),message:msg};
 saveOrder(orderRecord);
 msg=msg.replace('আমি নিচের প্রোডাক্টগুলো অর্ডার করতে চাই:','অর্ডার আইডি: '+orderId+'\nআমি নিচের প্রোডাক্টগুলো অর্ডার করতে চাই:');
-closeCart();showStatus('অর্ডার এই ব্রাউজারে সংরক্ষণ করা হয়েছে। WhatsApp খুললে Send চাপুন।');window.location.href='https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(msg)}
+closeCart();showStatus('WhatsApp খোলা হচ্ছে… WhatsApp খুললে মেসেজটি দেখে Send চাপুন।');const waUrl='https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(msg);window.location.assign(waUrl)}
 $('paymentInstructions').textContent=PAYMENT_NUMBER?'৳১৩০ Send Money করুন: '+PAYMENT_NUMBER+' (শুধু বিকাশ পার্সোনাল, Send Money)। Transaction ID সংরক্ষণ করুন।':'পেমেন্ট নম্বর এখনো সেট করা হয়নি। দোকানের সঙ্গে WhatsApp-এ যোগাযোগ করে সঠিক নম্বর নিশ্চিত করুন; নম্বর না জেনে টাকা পাঠাবেন না।';
 ['search','category','sort'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',render));load();
 </script></body></html>
