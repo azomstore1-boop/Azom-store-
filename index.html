@@ -64,6 +64,48 @@ footer{text-align:center;padding:36px 16px 100px;color:#8490a5;font-size:13px}
 hr{border:0;border-top:1px solid #e5e9f1}
 @media(max-width:700px){header{padding:12px 14px}header h1{font-size:19px}header small{font-size:10px}.wrap{padding:16px 12px 28px}.hero{border-radius:22px;padding:25px 21px;min-height:205px}.hero p{font-size:13px}.toolbar{grid-template-columns:1fr 1fr;gap:9px}.toolbar input{grid-column:1/-1}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.photo{height:145px}.card{border-radius:16px}.card .inside{padding:11px;gap:8px}.card h3{font-size:14px}.price{font-size:19px}.actions{flex-direction:column;gap:6px}.actions button{width:100%;padding:9px 7px}.bar{padding:10px 13px}.bar button{padding:10px 12px;font-size:13px}.panel{padding:16px}.modal{padding:17px;border-radius:18px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+/* AZOM STORE colorful retail theme inspired by the supplied reference */
+:root{font-family:Inter,system-ui,'Noto Sans Bengali',sans-serif;color:#253346;background:#f3f4f6;font-synthesis:none;--navy:#24384b;--ink:#253346;--muted:#75808d;--purple:#f2c400;--purple2:#ffda28;--mint:#20a879;--line:#e3e6eb;--surface:#fff;--soft:#fff8d9}
+body{background:#f1f2f4;color:var(--ink)}
+header{background:linear-gradient(110deg,#203449,#304b60);color:#fff;border-bottom:5px solid #f3c500;box-shadow:0 5px 18px #16263822}
+header h1{letter-spacing:1.1px;font-size:clamp(20px,3vw,28px)}
+header h1:before{content:"✦";color:#ffd21f}
+header small{color:#dce5ed}
+header .outline{background:#ffffff12;color:#fff;border-color:#ffffff45}
+.green{background:linear-gradient(135deg,#ffd62e,#f2bd00);color:#263548;box-shadow:0 5px 14px #b38a001f}
+.green:hover:not(:disabled){background:linear-gradient(135deg,#ffe15d,#f3c000)}
+.dark{background:#24384b;color:#fff}
+.outline{background:#fff;color:#304257;border:1px solid #dce1e7}
+.wrap{max-width:1200px;padding-top:22px}
+.hero{background:linear-gradient(110deg,#174a83 0%,#367eaa 35%,#d4c6cf 66%,#ef9f8e 100%);border-radius:0;min-height:290px;margin-bottom:24px;padding:clamp(28px,5vw,60px);box-shadow:0 12px 28px #1d34421b}
+.hero:before{width:360px;height:360px;right:3%;top:-90px;border:2px solid #ffffff55;box-shadow:0 0 0 25px #ffffff0d,0 0 0 58px #ffffff0d,0 0 0 92px #ffffff0a}
+.hero:after{content:"🛍️";right:9%;bottom:5%;font-size:clamp(100px,16vw,175px);line-height:1;color:#fff;opacity:.75;transform:rotate(-9deg);filter:drop-shadow(0 14px 14px #17364b35)}
+.hero h2{max-width:610px;text-shadow:0 2px 8px #102b4a20}
+.hero p{color:#fff;max-width:580px;text-shadow:0 1px 5px #102b4a30}
+.toolbar{margin-top:25px}
+input:focus,select:focus,textarea:focus{border-color:#edc400;box-shadow:0 0 0 4px #f3c50026}
+#summary{color:#4b5a6b}
+.grid{gap:20px}
+.card{border:1px solid #e4e6e9;border-radius:4px;box-shadow:0 5px 15px #1b2b3c0b}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 24px #1b2b3c18;border-color:#f0cf35}
+.photo{height:220px;background:#fff;padding:10px;object-fit:contain}
+.card .inside{padding:15px}
+.card h3{color:#293b4e}
+.price{color:#e0ad00}
+.tag{background:#e4f8ed;color:#167a50}
+.sold{background:#fff0f0;color:#c13d51}
+.actions button{border-radius:3px}
+.bar{background:#fff;border-top:3px solid #f3c500;box-shadow:0 -6px 20px #1b2b3c0b}
+.drawer{background:#13233899}
+.panel{background:#f8f9fb;border-left:5px solid #f3c500}
+.panel h2,.modal h2{color:#24384b}
+.notice{background:#fff8d9;border-color:#f3d96b;color:#6b5715;border-radius:5px}
+.checkout-form input,.checkout-form textarea,.checkout-form select{border-radius:6px}
+.checkout-form label{color:#34465a}
+footer{background:#24384b;color:#d5dee7;border-top:5px solid #f3c500;padding:35px 16px 100px}
+.modal{border-radius:8px;border-top:5px solid #f3c500}
+@media(max-width:700px){.hero{border-radius:0;min-height:235px;padding:27px 20px}.hero:after{right:4%;bottom:7%;font-size:95px;opacity:.38}.photo{height:150px}.grid{gap:11px}.card{border-radius:5px}.card .inside{padding:10px}.bar{border-top-width:3px}}
+
 </style></head><body><header><div><h1>AZOM STORE</h1><small>Explore • Choose • Order on WhatsApp</small></div><div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end"><button class="outline" onclick="openOrders()">📦 আমার অর্ডার</button><button class="green" onclick="openCart()">🛒 কার্ট <span id="count">0</span></button></div></header><main class="wrap"><section class="hero"><h2>স্বাগতম Azom Store-এ!</h2><p>চাইনিজ স্ন্যাকস, গ্যাজেট, কসমেটিকস, ফ্যাশন ও আরও অনেক কিছু। পছন্দ করুন, WhatsApp-এ অর্ডার করুন।</p></section><div id="status" class="notice" hidden></div><div class="toolbar"><input id="search" placeholder="🔎 প্রোডাক্ট খুঁজুন..." aria-label="Search products"><select id="category" aria-label="Category"><option value="">সব ক্যাটাগরি</option></select><select id="sort" aria-label="Sort"><option value="">ডিফল্ট</option><option value="asc">কম দাম আগে</option><option value="desc">বেশি দাম আগে</option></select></div><p id="summary" class="muted"></p><div id="products" class="grid"></div></main><div class="bar"><div><strong id="bottomCount">0 পিস</strong><div class="muted" id="bottomTotal">৳0</div></div><button class="green" onclick="openCart()">কার্ট দেখুন →</button></div><div id="drawer" class="drawer" onclick="if(event.target===this)closeCart()"><div class="panel"><div class="row"><h2>আপনার কার্ট</h2><button class="outline" onclick="closeCart()">✕</button></div><div id="cartItems"></div><hr><div class="row"><span>পণ্যের মূল্য</span><strong id="subtotal"></strong></div><div class="row"><span>ডেলিভারি (সারা বাংলাদেশ)</span><strong id="delivery"></strong></div><div class="row"><strong>মোট</strong><strong id="grand"></strong></div><form id="orderForm" class="checkout-form" onsubmit="checkout(event)">
 <h3 style="margin:0">ডেলিভারির তথ্য <span class="required">*</span></h3>
 <label>কাস্টমারের পূর্ণ নাম <span class="required">*</span><input id="customerName" name="customerName" required minlength="2" maxlength="80" autocomplete="name" placeholder="আপনার পূর্ণ নাম"></label>
@@ -126,13 +168,13 @@ function continueWhatsApp(orderId){
   '',
   'দয়া করে আমার অর্ডারের অবস্থা জানাবেন।'
  ].join('\\n');
- window.open('https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(message),'_blank');
+ const waUrl='https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(message);const waWindow=window.open(waUrl,'_blank');if(!waWindow){const link=document.createElement('a');link.href=waUrl;link.target='_blank';link.rel='noopener noreferrer';link.style.display='none';document.body.appendChild(link);link.click();link.remove();}
 }
 function checkout(event){event.preventDefault();const form=$('orderForm');if(!form.reportValidity())return;let lines=Object.entries(cart).map(([id,qty])=>({p:item(id),qty})).filter(x=>x.p);if(!lines.length){alert('আগে কার্টে প্রোডাক্ট যোগ করুন।');return;}if(lines.some(x=>x.qty>x.p.stock)){alert('কোনো প্রোডাক্টের পরিমাণ স্টকের চেয়ে বেশি।');return;}const val=id=>$(id).value.trim();if(!PAYMENT_NUMBER){alert('দোকানের পেমেন্ট নম্বর এখনো সেট করা হয়নি। WhatsApp-এ যোগাযোগ করে সঠিক নম্বর জেনে নিন।');return;}const phone=val('customerPhone').replace(/[\s-]/g,'');if(!/^(?:\+?88)?01[3-9][0-9]{8}$/.test(phone)){ $('customerPhone').setCustomValidity('সঠিক বাংলাদেশি মোবাইল নম্বর দিন।');form.reportValidity();$('customerPhone').setCustomValidity('');return;}let sum=lines.reduce((n,x)=>n+x.p.price*x.qty,0);let msg=['আসসালামু আলাইকুম, Azom Store!','আমি নিচের প্রোডাক্টগুলো অর্ডার করতে চাই:','',...lines.map((x,i)=>`${i+1}. ${x.p.name} (${x.p.id}) — ${x.qty} পিস × ${money(x.p.price)} = ${money(x.qty*x.p.price)}`),'',`প্রোডাক্ট মূল্য: ${money(sum)}`,`ডেলিভারি চার্জ (প্রাথমিক): ${money(DELIVERY_CHARGE)}`,`সর্বমোট (প্রাথমিক): ${money(sum+DELIVERY_CHARGE)}`,'','কাস্টমারের তথ্য:',`নাম: ${val('customerName')}`,`মোবাইল: ${phone}`,`গ্রাম/মহল্লা/রাস্তা: ${val('customerVillage')}`,`থানা/উপজেলা: ${val('customerThana')}`,`জেলা: ${val('customerDistrict')}`,`বাড়ি/পরিচিত স্থান: ${val('customerLandmark')||'উল্লেখ নেই'}`,'',`অগ্রিম ডেলিভারি চার্জ: ${money(DELIVERY_CHARGE)}`,`পেমেন্ট মাধ্যম: ${val('paymentMethod')}`,`পেমেন্ট নম্বর: ${PAYMENT_NUMBER}`,`প্রেরকের নম্বর: ${val('paymentSender')}`,`Transaction ID: ${val('paymentTrx')}`,'পেমেন্ট যাচাই সাপেক্ষে অর্ডার নিশ্চিত করবেন।','','স্টক ও চার্জ নিশ্চিত করে জানাবেন।'].join('\n');const orderId='AZ'+Date.now().toString().slice(-9);
 const orderRecord={orderId,date:new Date().toLocaleString('bn-BD'),customerName:val('customerName'),customerPhone:phone,address:[val('customerVillage'),val('customerThana'),val('customerDistrict'),val('customerLandmark')].filter(Boolean).join(', '),paymentMethod:val('paymentMethod'),paymentNumber:PAYMENT_NUMBER,paymentSender:val('paymentSender'),paymentTrx:val('paymentTrx'),subtotal:sum,delivery:DELIVERY_CHARGE,total:sum+DELIVERY_CHARGE,items:lines.map(x=>({id:x.p.id,name:x.p.name,price:x.p.price,qty:x.qty})),message:msg};
 saveOrder(orderRecord);
 msg=msg.replace('আমি নিচের প্রোডাক্টগুলো অর্ডার করতে চাই:','অর্ডার আইডি: '+orderId+'\nআমি নিচের প্রোডাক্টগুলো অর্ডার করতে চাই:');
-closeCart();showStatus('WhatsApp খোলা হচ্ছে… WhatsApp খুললে মেসেজটি দেখে Send চাপুন।');const waUrl='https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(msg);window.location.assign(waUrl)}
+closeCart();showStatus('WhatsApp খোলা হচ্ছে… WhatsApp খুললে মেসেজটি দেখে Send চাপুন।');const waUrl='https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(msg);const waWindow=window.open(waUrl,'_blank');if(!waWindow){const link=document.createElement('a');link.href=waUrl;link.target='_blank';link.rel='noopener noreferrer';link.style.display='none';document.body.appendChild(link);link.click();link.remove();} }
 $('paymentInstructions').textContent=PAYMENT_NUMBER?'৳১৩০ Send Money করুন: '+PAYMENT_NUMBER+' (শুধু বিকাশ পার্সোনাল, Send Money)। Transaction ID সংরক্ষণ করুন।':'পেমেন্ট নম্বর এখনো সেট করা হয়নি। দোকানের সঙ্গে WhatsApp-এ যোগাযোগ করে সঠিক নম্বর নিশ্চিত করুন; নম্বর না জেনে টাকা পাঠাবেন না।';
 ['search','category','sort'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',render));load();
 </script></body></html>
